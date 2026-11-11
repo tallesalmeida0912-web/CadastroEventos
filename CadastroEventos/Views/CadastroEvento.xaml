@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CadastroEventos.Views.CadastroEvento"
+    
+    BackgroundColor="{StaticResource Gray200}">
+
+    <ScrollView>
+    <VerticalStackLayout>
+        
+   
+        <Border
+            BackgroundColor="White"
+            Stroke="Black"
+            StrokeThickness="1"
+            Padding="20"
+            Margin="25, 25, 25, 25"
+            StrokeShape="RoundRectangle 15">
+
+
+            <VerticalStackLayout Padding="25" Spacing="15">
+
+
+                <Label
+                Text="Cadastro de Eventos"
+                FontSize="27"
+                FontAttributes="Bold"
+                TextColor="#20304A"
+                HorizontalOptions="Center"/>
+
+                <Label
+                Text="Preencha as informações do evento"
+                FontSize="14"
+                TextColor="Black"
+                HorizontalOptions="Center"/>
+
+                <Label Text="Nome do evento" TextColor="{StaticResource OffBlack}"/>
+                <Entry
+                Placeholder="Ex: Feira de Tecnologia"
+                Text="{Binding Nome, Mode=TwoWay}"
+                BackgroundColor="White"/>
+
+                <Label Text="Data de início" TextColor="{StaticResource OffBlack}"/>
+                <DatePicker
+    x:Name="dpDataInicio"
+    Date="{Binding DataInicio, Mode=TwoWay}"
+    DateSelected="OnDataInicioSelected"
+    BackgroundColor="White"/>
+
+                <Label Text="Data de término" TextColor="{StaticResource OffBlack}"/>
+                <DatePicker
+    x:Name="dpDataTermino"
+    Date="{Binding DataTermino, Mode=TwoWay}"
+    BackgroundColor="White"/>
+
+                <Label Text="Número de participantes" TextColor="{StaticResource OffBlack}"/>
+                <Entry
+                Placeholder="Ex: 50"
+                Keyboard="Numeric"
+                Text="{Binding NumeroParticipantes, Mode=TwoWay}"
+                BackgroundColor="White"/>
+
+                <Label Text="Local do evento" TextColor="{StaticResource OffBlack}"/>
+                <Entry
+                Placeholder="Ex: Centro de Convenções"
+                Text="{Binding Local, Mode=TwoWay}"
+                BackgroundColor="White"/>
+
+                <Label Text="Custo por participante (R$)" TextColor="{StaticResource OffBlack}"/>
+                <Entry
+                Placeholder="Ex: 25,00"
+                Keyboard="Numeric"
+                Text="{Binding CustoPorParticipante, Mode=TwoWay}"
+                BackgroundColor="{StaticResource White}"/>
+
+                
+            </VerticalStackLayout>
+        </Border>
+        
+    
+   
+        <Button
+            Text="CADASTRAR EVENTO"
+            Clicked="OnCadastrarClicked"
+            BorderColor="Black"
+            BorderWidth="1.2"
+            BackgroundColor="White"
+            TextColor="Black"
+            FontAttributes="Bold"
+            CornerRadius="12"
+            HeightRequest="55"
+            Margin="20,15,20,10"/>
+    </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
