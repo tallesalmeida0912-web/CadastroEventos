@@ -12,7 +12,12 @@ namespace CadastroEventos
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new NavigationPage(new CadastroEvento()));
+            Window window = new Window(new NavigationPage(new CadastroEvento()));
+
+            window.Width = 400;
+            window.Height = 600;
+
+            return window;
         }
     }
 }
